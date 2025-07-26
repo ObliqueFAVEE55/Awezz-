@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Computing – Final Version</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e8f5e9;
+      color: #1b4332;
+    }
+    header, footer {
+      background: #2d6a4f;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: #52b788;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0.5rem 1rem;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #2d6a4f;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .quiz-question {
+      margin-bottom: 1rem;
+    }
+    .chatbox {
+      background: #ffffff;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    input, button, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.4rem;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Green Computing: Final PAT Website</h1>
+    <p>By Tebogo Selae Mphosi | Royal Schools Sky City | Grade 10 CAT PAT 2025</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#schools">Schools</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#video">Video</a>
+    <a href="#faq">Chat</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>This final version of our Green Computing website includes real strategies for reducing the environmental impact of technology in schools, homes, and companies across South Africa.</p>
+      <img src="https://images.unsplash.com/photo-1599488615736-1ba1cf1c8df7" alt="Eco learning" />
+    </section>
+
+    <section id="schools">
+      <h2>Focus on Schools</h2>
+      <p>Schools in South Africa can go green by reducing paper use, promoting digital submissions, using laptops over desktops, and teaching digital sustainability in subjects like CAT and Life Orientation. Recycling bins, unplugged devices, and classroom energy-saving policies make a real impact.</p>
+    </section>
+
+    <section id="quiz">
+      <h2>Quick Green Quiz</h2>
+      <div class="quiz-question">
+        <p><strong>Q1:</strong> Which device uses the most electricity in a computer lab?</p>
+        <button onclick="alert('Correct! Monitors use a lot of energy.')">Monitors</button>
+        <button onclick="alert('Not quite. Try again.')">Keyboards</button>
+      </div>
+    </section>
+
+    <section id="video">
+      <h2>Watch & Learn</h2>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/MehcJlQ0bGY" frameborder="0" allowfullscreen></iframe>
+      <p><a href="https://www.youtube.com/watch?v=MehcJlQ0bGY" target="_blank">Watch on YouTube if it doesn't play here</a></p>
+    </section>
+
+    <section id="faq">
+      <h2>Ask the AI</h2>
+      <div class="chatbox" id="chatbox">
+        <p><strong>AI:</strong> Hello! Ask me anything about Green Computing 🌱</p>
+      </div>
+      <input type="text" id="userInput" placeholder="Type your question..." />
+      <button onclick="chat()">Send</button>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Form</h2>
+      <form onsubmit="return contactForm(event)">
+        <input type="text" placeholder="Your Name" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Tebogo Selae Mphosi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function chat() {
+      let input = document.getElementById('userInput').value.toLowerCase();
+      let response = "";
+      if (input.includes("school")) {
+        response = "Schools can go green by using energy-efficient computers, reducing printing, and teaching green computing habits.";
+      } else if (input.includes("company")) {
+        response = "Companies can reduce their environmental impact by recycling e-waste and adopting remote work to save energy.";
+      } else if (input.includes("individual")) {
+        response = "Individuals can unplug unused devices, reduce screen brightness, and recycle old gadgets responsibly.";
+      } else {
+        response = "That's a great question! Green Computing is all about using technology in a more eco-friendly way.";
+      }
+      let box = document.getElementById('chatbox');
+      box.innerHTML += `<p><strong>You:</strong> ${input}</p><p><strong>AI:</strong> ${response}</p>`;
+      document.getElementById('userInput').value = '';
+    }
+
+    function contactForm(event) {
+      event.preventDefault();
+      alert("Thank you for your message!");
+      return false;
+    }
+  </script>
+</body>
+</html>
