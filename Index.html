@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoTech Schools SA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e8f5e9;
+      margin: 0;
+      padding: 0;
+      color: #1b4332;
+    }
+    header, footer {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #40916c;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #2d6a4f;
+    }
+    .chatbox {
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    input, button {
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoTech Schools SA</h1>
+    <p>Shaping a sustainable future through green technology</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#schools">Schools</a>
+    <a href="#people">People</a>
+    <a href="#companies">Companies</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#chat">AI Chat</a>
+  </nav>
+
+  <main>
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>This website is created by Tebogo Selae Mphosi as part of the Grade 10 CAT PAT 2025. It explores how schools, people, and companies can reduce the environmental impact of technology through green computing.</p>
+    </section>
+
+    <section id="schools">
+      <h2>Green Computing in Schools</h2>
+      <ul>
+        <li>Use laptops instead of power-hungry desktops</li>
+        <li>Enable power-saving settings on all school devices</li>
+        <li>Encourage students to submit digital assignments</li>
+        <li>Recycle or donate unused tech equipment</li>
+        <li>Teach environmental IT practices in CAT, LO and NS</li>
+      </ul>
+    </section>
+
+    <section id="people">
+      <h2>How People Can Help</h2>
+      <ul>
+        <li>Turn off electronics when not in use</li>
+        <li>Unplug chargers to avoid phantom power usage</li>
+        <li>Reduce screen brightness to save battery and power</li>
+        <li>Use energy-efficient devices and extend their lifespan</li>
+      </ul>
+    </section>
+
+    <section id="companies">
+      <h2>What Companies Are Doing</h2>
+      <p>Leading tech companies are working toward sustainability:</p>
+      <ul>
+        <li><strong>MTN:</strong> Recycles e-waste from clients and supports solar-powered towers</li>
+        <li><strong>HP:</strong> Offers cartridge recycling and carbon-neutral printing</li>
+        <li><strong>Vodacom:</strong> Runs green base stations and recycles phones</li>
+      </ul>
+    </section>
+
+    <section id="quiz">
+      <h2>Green Computing Quiz</h2>
+      <p><strong>Q1:</strong> What’s a simple way to reduce energy use at school?</p>
+      <button onclick="alert('Correct! Sleep mode and digital submissions are great!')">Enable Sleep Mode</button>
+      <button onclick="alert('Not quite! Try again.')">Print more worksheets</button>
+    </section>
+
+    <section id="chat">
+      <h2>Ask the Eco-AI</h2>
+      <div class="chatbox" id="chatbox">
+        <p><strong>AI:</strong> Hello! Ask me anything about green computing 🌱</p>
+      </div>
+      <input type="text" id="userInput" placeholder="Type your question..." />
+      <button onclick="chat()">Send</button>
+    </section>
+
+    <section>
+      <h2>Watch: What is Green Computing?</h2>
+      <iframe src="https://www.youtube.com/embed/MehcJlQ0bGY" allowfullscreen></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EcoTech Schools SA | Designed by Tebogo Selae Mphosi</p>
+  </footer>
+
+  <script>
+    function chat() {
+      const input = document.getElementById("userInput").value.toLowerCase();
+      let response = "";
+
+      if (input.includes("school")) {
+        response = "Schools can promote green computing through digital learning, energy-saving tech, and recycling e-waste.";
+      } else if (input.includes("company")) {
+        response = "Companies are adopting remote work, using solar-powered data centers, and recycling electronics.";
+      } else if (input.includes("people")) {
+        response = "You can save energy by turning off unused devices, dimming screens, and unplugging chargers.";
+      } else {
+        response = "Green computing means using technology in an environmentally responsible way.";
+      }
+
+      const chatbox = document.getElementById("chatbox");
+      chatbox.innerHTML += `<p><strong>You:</strong> ${input}</p><p><strong>AI:</strong> ${response}</p>`;
+      document.getElementById("userInput").value = "";
+    }
+  </script>
+</body>
+</html>
